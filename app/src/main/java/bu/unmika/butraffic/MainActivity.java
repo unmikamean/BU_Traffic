@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -35,10 +36,16 @@ public class MainActivity extends AppCompatActivity {
 
     }  //Main Method เริ่มต้นการทำงานที่ Method นี้
 
+    public void clickExercise(View view){
+
+        startActivity(new Intent(MainActivity.this, ExerciseActivity.class));
+
+    }
+
     private void CreateListView() {
 
         //setup array
-        String[] strTitle = new String[20];
+        final String[] strTitle = new String[20];
         strTitle[0] = "ห้ามเลี้ยวซ้าย";
         strTitle[1] = "ห้ามเลี้ยวขวา";
         strTitle[2] = "ตรงไป";
@@ -60,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         strTitle[18] = "จำกัดความกว้าง";
         strTitle[19] = "จำกัดความสูง";
 
-        int[] intIcon = {R.drawable.traffic_01,R.drawable.traffic_02,R.drawable.traffic_03,
+        final int[] intIcon = {R.drawable.traffic_01,R.drawable.traffic_02,R.drawable.traffic_03,
                 R.drawable.traffic_04,R.drawable.traffic_05,R.drawable.traffic_06,
                 R.drawable.traffic_07,R.drawable.traffic_08,R.drawable.traffic_09,
                 R.drawable.traffic_10,R.drawable.traffic_11,R.drawable.traffic_12,
@@ -71,8 +78,21 @@ public class MainActivity extends AppCompatActivity {
         MyAdapter objMyAdapter = new MyAdapter(MainActivity.this, strTitle, intIcon);
         trafficListView.setAdapter(objMyAdapter);
 
+        trafficListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-    }
+                Intent objIntent = new Intent(MainActivity.this, DetailActivity.class); //this อยู่ที่ไหน , Class ไปที่ไหน
+                objIntent.putExtra("Title", strTitle[position]);
+                objIntent.putExtra("Image", intIcon[position]);
+                objIntent.putExtra("Index", position);
+                startActivity(objIntent);
+
+
+            } //Event
+        });
+
+    } // CreateListView
 
 
     private void buttonController() {

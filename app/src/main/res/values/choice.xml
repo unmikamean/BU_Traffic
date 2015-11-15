@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="time1">
+
+        <item>ห้ามเลี้ยวซ้าย</item>
+        <item>มั่ว</item>
+        <item>มั่ว</item>
+        <item>มั่ว</item>
+
+    </string-array>
+
+    <string-array name="time2">
+
+        <item>ห้ามเลี้ยวซ้าย</item>
+        <item>ถูก</item>
+        <item>มั่ว</item>
+        <item>มั่ว</item>
+
+    </string-array>
+
+    <string-array name="time3">
+
+        <item>ห้ามเลี้ยวซ้าย</item>
+        <item>มั่ว</item>
+        <item>ถูก</item>
+        <item>มั่ว</item>
+
+    </string-array>
+
+    <string-array name="time4">
+
+        <item>ห้ามเลี้ยวซ้าย</item>
+        <item>มั่ว</item>
+        <item>มั่ว</item>
+        <item>ถูก</item>
+
+    </string-array>
+
+    <string-array name="time5">
+
+        <item>ห้ามเลี้ยวซ้าย</item>
+        <item>มั่ว</item>
+        <item>มั่ว</item>
+        <item>ถูก</item>
+
+    </string-array>
+
+
+
+
+
+</resources>
